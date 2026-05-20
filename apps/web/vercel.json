@@ -2,8 +2,7 @@
   "crons": [
     {
       "path": "/api/jobs/focus/poll",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 3 * * *"
     }
   ]
 }
-
