@@ -1,4 +1,4 @@
-import { FocusAuth, FocusConsultResponse, FocusEmitResponse } from './types.js';
+import { FocusAuth, FocusConsultResponse, FocusEmitResponse } from './types';
 
 type FetchLike = typeof fetch;
 
@@ -79,4 +79,3 @@ export class FocusHttpError extends Error {
     this.body = body;
   }
 }
-
