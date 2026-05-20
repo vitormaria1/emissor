@@ -166,8 +166,7 @@ export default function EmitTestPage() {
 
           <div className="hidden items-center gap-2 text-xs text-zinc-600 md:flex">
             <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">Focus NFe</span>
-            <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">Homolog/Prod</span>
-            <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">Sem login (teste)</span>
+            <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">NFS-e</span>
           </div>
         </div>
       </header>
@@ -176,19 +175,19 @@ export default function EmitTestPage() {
         <div className="grid gap-6 lg:grid-cols-12">
           <section className="lg:col-span-5">
             <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <h1 className="text-xl font-semibold text-zinc-900">Validação rápida de emissão</h1>
+              <h1 className="text-xl font-semibold text-zinc-900">Emissão de NFS-e</h1>
               <p className="mt-2 text-sm text-zinc-600">
-                Preencha os dados e nós montamos o payload da Focus automaticamente. Depois trocamos por telas
-                finais do emissor.
+                Preencha as informações abaixo e emita sua nota. O sistema envia para a prefeitura via Focus NFe e
+                você pode acompanhar o status.
               </p>
 
               <div className="mt-6 grid gap-4">
-                <Field label="ADMIN_SECRET" hint="Protege os endpoints de teste.">
+                <Field label="Chave de acesso" hint="Uso interno (não fica salvo).">
                   <input
                     value={adminSecret}
                     onChange={(e) => setAdminSecret(e.target.value)}
                     className="h-11 w-full rounded-2xl border border-zinc-200 px-3 outline-none focus:border-[var(--brand)] focus:ring-4 focus:ring-[color:rgba(63,75,255,0.10)]"
-                    placeholder="Cole o ADMIN_SECRET"
+                    placeholder="Digite sua chave de acesso"
                   />
                 </Field>
 
@@ -213,7 +212,7 @@ export default function EmitTestPage() {
                   </Field>
                 </div>
 
-                <Field label="Token Focus" hint="Não fica salvo. Cole o token de homologação/produção.">
+                <Field label="Token Focus" hint="Não fica salvo.">
                   <input
                     value={token}
                     onChange={(e) => setToken(e.target.value)}
@@ -444,10 +443,18 @@ export default function EmitTestPage() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-2xl border border-zinc-100 bg-zinc-50 p-4 text-xs text-zinc-600">
-                Dica: use uma referência única por tentativa. Se a prefeitura estiver lenta, rode “Consultar status”
-                algumas vezes.
-              </div>
+              <details className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                <summary className="cursor-pointer text-sm font-semibold text-zinc-900">
+                  Dicas para emissão
+                </summary>
+                <ul className="mt-3 list-disc space-y-1 pl-5 text-xs text-zinc-600">
+                  <li>Use uma referência única por nota (o sistema já gera uma automaticamente).</li>
+                  <li>
+                    Se a prefeitura estiver lenta, utilize “Consultar status” após alguns segundos/minutos.
+                  </li>
+                  <li>Comece por homologação e só depois emita em produção.</li>
+                </ul>
+              </details>
             </div>
           </section>
 
@@ -455,9 +462,9 @@ export default function EmitTestPage() {
             <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-sm font-semibold text-zinc-900">Resultado</h2>
+                  <h2 className="text-sm font-semibold text-zinc-900">Status e retorno</h2>
                   <p className="mt-1 text-xs text-zinc-600">
-                    Mostra o payload gerado pela nossa app e a resposta da Focus (para debug).
+                    Acompanhe o retorno da Focus e o status de processamento.
                   </p>
                 </div>
                 <button
@@ -467,23 +474,35 @@ export default function EmitTestPage() {
                     setResult('');
                   }}
                 >
-                  Reset
+                  Limpar
                 </button>
               </div>
 
-              <pre className="mt-4 max-h-[720px] overflow-auto rounded-2xl border border-zinc-200 bg-zinc-950 p-4 text-xs text-zinc-50">
-                {result || '—'}
-              </pre>
+              <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4">
+                <p className="text-xs font-semibold text-zinc-700">Última resposta</p>
+                <pre className="mt-2 max-h-[520px] overflow-auto rounded-xl bg-zinc-950 p-4 text-xs text-zinc-50">
+                  {result || '—'}
+                </pre>
+                <details className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+                  <summary className="cursor-pointer text-xs font-semibold text-zinc-700">
+                    Detalhes técnicos
+                  </summary>
+                  <p className="mt-2 text-xs text-zinc-600">
+                    Este painel mostra payload gerado e retorno completo para auditoria. No produto final,
+                    fica oculto para usuários comuns.
+                  </p>
+                </details>
+              </div>
             </div>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <InfoCard
-                title="Boas práticas"
-                body="Faça testes em homologação primeiro. Em produção, garanta que os dados do prestador/tomador estejam corretos."
+                title="Segurança"
+                body="Nunca compartilhe tokens. Use homologação para conferir campos obrigatórios antes de emitir em produção."
               />
               <InfoCard
-                title="Próximo passo"
-                body="Depois de validar a emissão, vamos substituir esta tela por: Empresa → Cliente → Serviço → Emitir → DANFS-e."
+                title="Operação"
+                body="Após emitir, use “Consultar status” para atualizar autorização/rejeição e visualizar o retorno."
               />
             </div>
           </section>
