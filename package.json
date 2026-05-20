@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Plataforma SaaS de emissão de NFS-e (Focus NFe)",
-  "packageManager": "npm@10",
+  "packageManager": "npm@10.9.3",
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
