@@ -13,11 +13,11 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.2",
     "@emissor/db": "file:../../packages/db",
     "@emissor/focus": "file:../../packages/focus",
     "@emissor/logger": "file:../../packages/logger",
     "@emissor/validators": "file:../../packages/validators",
-    "@auth/prisma-adapter": "^2.11.2",
     "@hookform/resolvers": "^5.2.2",
     "argon2": "^0.44.0",
     "class-variance-authority": "^0.7.1",
@@ -32,13 +32,14 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.5.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5"
   }
 }
