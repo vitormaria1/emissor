@@ -8,6 +8,7 @@ const runtimeEnvSchema = z.object({
   CRON_SECRET: z.string().min(16).optional(),
   FOCUS_WEBHOOK_BASIC_USER: z.string().min(1).optional(),
   FOCUS_WEBHOOK_BASIC_PASS: z.string().min(1).optional(),
+  ADMIN_SECRET: z.string().min(16).optional(),
 });
 
 const rawEnv = {
@@ -18,6 +19,7 @@ const rawEnv = {
   CRON_SECRET: process.env.CRON_SECRET,
   FOCUS_WEBHOOK_BASIC_USER: process.env.FOCUS_WEBHOOK_BASIC_USER,
   FOCUS_WEBHOOK_BASIC_PASS: process.env.FOCUS_WEBHOOK_BASIC_PASS,
+  ADMIN_SECRET: process.env.ADMIN_SECRET,
 };
 
 function isBuildPhase() {

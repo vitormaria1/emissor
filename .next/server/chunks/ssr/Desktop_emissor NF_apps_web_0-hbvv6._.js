@@ -1,0 +1,3 @@
+module.exports=[83832,a=>{"use strict";a.i(8050);var b=a.i(78888),c=a.i(26624);async function d(){let a=await (0,c.auth)();a?.user||(0,b.redirect)("/auth/login");let d=a.user.id;return d||(0,b.redirect)("/auth/login"),{session:a,userId:d}}a.s(["requireSession",0,d])},69136,a=>{"use strict";var b=a.i(64755);a.s([],27347),a.i(27347),a.s(["40f8da24002b4846fa41f473e0f9ae1eeeba8d6e4d",()=>b.createCompany],69136)}];
+
+//# sourceMappingURL=Desktop_emissor%20NF_apps_web_0-hbvv6._.js.map

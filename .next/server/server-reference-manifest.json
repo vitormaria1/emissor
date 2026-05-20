@@ -1,0 +1,18 @@
+{
+  "node": {
+    "40f8da24002b4846fa41f473e0f9ae1eeeba8d6e4d": {
+      "workers": {
+        "app/app/companies/page": {
+          "moduleId": 69136,
+          "async": false,
+          "exportedName": "createCompany",
+          "filename": "Desktop/emissor NF/apps/web/src/app/app/companies/actions.ts"
+        }
+      },
+      "filename": "Desktop/emissor NF/apps/web/src/app/app/companies/actions.ts",
+      "exportedName": "createCompany"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "gL6wrzAPotP+m1WOYPhx2OTk4vBcX87OlEr00oBBSEU="
+}
