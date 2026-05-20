@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { prisma } from '@emissor/db';
 import { logger } from '@emissor/logger';
 import { verifyPassword } from '@/auth/password';
+import { env } from '@/env';
 
 const credentialsSchema = z.object({
   email: z.string().email(),
@@ -14,6 +15,7 @@ const credentialsSchema = z.object({
 });
 
 export const authOptions: NextAuthOptions = {
+  secret: env.NEXTAUTH_SECRET,
   adapter: PrismaAdapter(prisma),
   session: { strategy: 'database' },
   pages: { signIn: '/auth/login' },
