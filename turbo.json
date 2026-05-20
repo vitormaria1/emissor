@@ -7,6 +7,16 @@
     },
     "build": {
       "dependsOn": ["^build"],
+      "env": [
+        "NEXTAUTH_SECRET",
+        "DATABASE_URL",
+        "DIRECT_URL",
+        "CRON_SECRET",
+        "FOCUS_WEBHOOK_BASIC_USER",
+        "FOCUS_WEBHOOK_BASIC_PASS",
+        "LOG_LEVEL",
+        "SERVICE_NAME"
+      ],
       "outputs": [".next/**", "dist/**"]
     },
     "lint": {
@@ -17,4 +27,3 @@
     }
   }
 }
-
