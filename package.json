@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "turbo dev",
-    "build": "turbo build",
+    "build": "turbo build && node scripts/vercel-next-output.mjs",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "format": "prettier -w .",
