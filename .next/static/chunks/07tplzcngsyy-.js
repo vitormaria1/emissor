@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,81952,t=>{"use strict";var o=t.i(57821),i=t.i(25334);t.s(["LogoutButton",0,function(){return(0,o.jsx)("button",{className:"text-sm text-zinc-700 hover:text-zinc-900",onClick:()=>(0,i.signOut)({callbackUrl:"/auth/login"}),type:"button",children:"Sair"})}])}]);

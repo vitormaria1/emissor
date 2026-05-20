@@ -1,4 +1,6 @@
 .DS_Store
+.next
+.next/**
 .env
 .env.*.local
 .turbo
@@ -6,4 +8,3 @@ node_modules
 dist
 coverage
 .vercel
-

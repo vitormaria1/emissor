@@ -1,3 +1,0 @@
-module.exports=[73454,a=>{"use strict";var b=a.i(37081);a.s(["default",0,function({children:a}){return(0,b.jsx)("div",{className:"min-h-dvh bg-zinc-50 text-zinc-900",children:(0,b.jsx)("div",{className:"mx-auto flex min-h-dvh w-full max-w-md flex-col justify-center px-6 py-10",children:a})})}])},54516,a=>{a.n(a.i(73454))}];
-
-//# sourceMappingURL=Desktop_emissor%20NF_apps_web_src_app_auth_layout_tsx_10xnw7n._.js.map
